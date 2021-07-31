@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "SimpleScriptLanguageCompiler.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Common.dll": {}
+        }
+      },
       "SimpleScriptLanguageCompiler.LexicalAnalyzer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -28,6 +38,11 @@
     }
   },
   "libraries": {
+    "SimpleScriptLanguageCompiler.Common/1.0.0": {
+      "type": "project",
+      "path": "../SimpleScriptLanguageCompiler.Common/SimpleScriptLanguageCompiler.Common.csproj",
+      "msbuildProject": "../SimpleScriptLanguageCompiler.Common/SimpleScriptLanguageCompiler.Common.csproj"
+    },
     "SimpleScriptLanguageCompiler.LexicalAnalyzer/1.0.0": {
       "type": "project",
       "path": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj",
@@ -41,6 +56,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "SimpleScriptLanguageCompiler.Common >= 1.0.0",
       "SimpleScriptLanguageCompiler.LexicalAnalyzer >= 1.0.0"
     ]
   },
@@ -78,6 +94,9 @@
           "projectReferences": {
             "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj": {
               "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj"
+            },
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.Common\\SimpleScriptLanguageCompiler.Common.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.Common\\SimpleScriptLanguageCompiler.Common.csproj"
             }
           }
         }
