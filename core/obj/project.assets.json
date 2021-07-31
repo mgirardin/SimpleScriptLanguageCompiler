@@ -5,11 +5,24 @@
       "SimpleScriptLanguageCompiler.LexicalAnalyzer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SimpleScriptLanguageCompiler.LexicalAnalyzer.dll": {}
         },
         "runtime": {
           "bin/placeholder/SimpleScriptLanguageCompiler.LexicalAnalyzer.dll": {}
+        }
+      },
+      "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Tokens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Tokens.dll": {}
         }
       }
     }
@@ -19,6 +32,11 @@
       "type": "project",
       "path": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj",
       "msbuildProject": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj"
+    },
+    "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
+      "type": "project",
+      "path": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj",
+      "msbuildProject": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj"
     }
   },
   "projectFileDependencyGroups": {

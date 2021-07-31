@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Tokens.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Tokens.dll": {}
+        }
       }
     }
   },
@@ -171,11 +181,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
+      "type": "project",
+      "path": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj",
+      "msbuildProject": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "SimpleScriptLanguageCompiler.Tokens >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -209,7 +225,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
