@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IviZoP1l6VrDtsisAe4c0EBDAGQtOpGt+Sq5+to9X2HCiQDnG338TrIYVjcdc2Ii3dGCTQPlg7iShSqdAHKNgA==",
+  "dgSpecHash": "a3c+MLSfR3PyYamw4gscqKPOBsKxvQRCwhFp2yZ3G0Qat2rmH+Z7PtmRkXD+LnYE7trhgw0jEd1p+mwFfUZuzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\core\\SimpleScriptLanguageCompiler.Core.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.14\\microsoft.netcore.app.host.win-x64.3.1.14.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
