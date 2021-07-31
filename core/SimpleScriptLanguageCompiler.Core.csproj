@@ -6,4 +6,8 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj" />
+  </ItemGroup>
+
 </Project>
