@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using SimpleScriptLanguageCompiler.Common;
-using SimpleScriptLanguageCompiler.LexicalAnalyzer;
+using SimpleScriptLanguageCompiler.LexicalAnalysis;
 
 var fileContent = File.ReadAllText(args[0]);
 LexicalAnalyzer.Run(fileContent)

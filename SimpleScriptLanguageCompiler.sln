@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.Core", "core\SimpleScriptLanguageCompiler.Core.csproj", "{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.LexicalAnalyzer", "lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj", "{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.LexicalAnalysis", "lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj", "{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.Tokens", "tokens\SimpleScriptLanguageCompiler.Tokens.csproj", "{D446E9D7-A689-45C8-A9E1-77BFD357433A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScriptLanguageCompiler.Common", "common\SimpleScriptLanguageCompiler.Common.csproj", "{A52BC033-92C2-47B7-9D82-3A33E21C23AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.Common", "common\SimpleScriptLanguageCompiler.Common.csproj", "{A52BC033-92C2-47B7-9D82-3A33E21C23AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
