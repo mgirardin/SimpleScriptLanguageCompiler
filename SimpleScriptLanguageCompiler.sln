@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScriptLanguageCompiler.Core", "core\SimpleScriptLanguageCompiler.Core.csproj", "{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScriptLanguageCompiler.LexicalAnalyzer", "lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj", "{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834BFBD2-2F4F-4BA4-BD82-CC1C5F308882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB594C2D-E5B5-442B-A5A6-F3D84DADEBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFA9150A-6249-47B3-BD9E-78422D1D88E5}
+	EndGlobalSection
+EndGlobal
