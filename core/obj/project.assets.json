@@ -40,8 +40,8 @@
   "libraries": {
     "SimpleScriptLanguageCompiler.Common/1.0.0": {
       "type": "project",
-      "path": "../SimpleScriptLanguageCompiler.Common/SimpleScriptLanguageCompiler.Common.csproj",
-      "msbuildProject": "../SimpleScriptLanguageCompiler.Common/SimpleScriptLanguageCompiler.Common.csproj"
+      "path": "../common/SimpleScriptLanguageCompiler.Common.csproj",
+      "msbuildProject": "../common/SimpleScriptLanguageCompiler.Common.csproj"
     },
     "SimpleScriptLanguageCompiler.LexicalAnalyzer/1.0.0": {
       "type": "project",
@@ -92,11 +92,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\common\\SimpleScriptLanguageCompiler.Common.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\common\\SimpleScriptLanguageCompiler.Common.csproj"
+            },
             "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj": {
               "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj"
-            },
-            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.Common\\SimpleScriptLanguageCompiler.Common.csproj": {
-              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.Common\\SimpleScriptLanguageCompiler.Common.csproj"
             }
           }
         }

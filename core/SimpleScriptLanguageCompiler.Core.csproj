@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\common\SimpleScriptLanguageCompiler.Common.csproj" />
     <ProjectReference Include="..\lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalyzer.csproj" />
   </ItemGroup>
 
