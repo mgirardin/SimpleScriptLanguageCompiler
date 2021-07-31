@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 
 namespace SimpleScriptLanguageCompiler.Core {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
+            var fileContent = File.ReadAllText(args[0]);
+            Console.WriteLine(fileContent);
         }
     }
 }
