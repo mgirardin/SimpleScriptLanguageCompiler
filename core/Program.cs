@@ -4,5 +4,5 @@ using SimpleScriptLanguageCompiler.Common;
 using SimpleScriptLanguageCompiler.LexicalAnalysis;
 
 var fileContent = File.ReadAllText(args[0]);
-LexicalAnalyzer.Run(fileContent)
+Scanner.Run(fileContent)
     .ForEach(Console.WriteLine);
