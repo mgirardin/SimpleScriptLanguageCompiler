@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "stateless/5.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/stateless.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/stateless.dll": {}
+        }
+      },
       "SimpleScriptLanguageCompiler.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -17,7 +26,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "SimpleScriptLanguageCompiler.Common": "1.0.0",
-          "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
+          "SimpleScriptLanguageCompiler.Tokens": "1.0.0",
+          "stateless": "5.11.0"
         },
         "compile": {
           "bin/placeholder/SimpleScriptLanguageCompiler.LexicalAnalysis.dll": {}
@@ -39,6 +49,30 @@
     }
   },
   "libraries": {
+    "stateless/5.11.0": {
+      "sha512": "5XXmdEQBOpgE90vqxfZH0ekdqfGB6xLe0Uyb7EyHr/fgv/zkZtDcru4KxRvAvWxE1u4c8MOZnOnXoRfQOfFnTg==",
+      "type": "package",
+      "path": "stateless/5.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Stateless.png",
+        "lib/net40/stateless.dll",
+        "lib/net40/stateless.xml",
+        "lib/net45/stateless.dll",
+        "lib/net45/stateless.xml",
+        "lib/net472/stateless.dll",
+        "lib/net472/stateless.xml",
+        "lib/net5.0/stateless.dll",
+        "lib/net5.0/stateless.xml",
+        "lib/netstandard1.0/stateless.dll",
+        "lib/netstandard1.0/stateless.xml",
+        "lib/netstandard2.0/stateless.dll",
+        "lib/netstandard2.0/stateless.xml",
+        "stateless.5.11.0.nupkg.sha512",
+        "stateless.nuspec"
+      ]
+    },
     "SimpleScriptLanguageCompiler.Common/1.0.0": {
       "type": "project",
       "path": "../common/SimpleScriptLanguageCompiler.Common.csproj",

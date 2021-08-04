@@ -7,7 +7,7 @@ namespace SimpleScriptLanguageCompiler.Tokens {
         /// <summary>
         /// Values of regular tokens <seealso cref="TokenEnum"/>
         /// </summary>
-        public IReadOnlyCollection<(int, char, string)> Consts { get; init; }
+        public IReadOnlyCollection<(int, char, string)> Consts { get; set; }
     }
 }
 

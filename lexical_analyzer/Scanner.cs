@@ -5,21 +5,22 @@ using SimpleScriptLanguageCompiler.Tokens;
 namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
     public class Scanner {
         private static char[] Separators => new char[] { ' ', '\t', '\r', '\n', '\v', '\f' };
+        private static TokenProcessor Processor => new TokenProcessor(); // TODO: Thread safe
 
         public static IReadOnlyCollection<TokenIdentifier> Run(string content) {
             var identifiers = new List<(int, char, string)>();
             var tokens = new List<TokenIdentifier>();
             content.Split(Separators)
                 .ForEach(tokenSubset => {
-                    // TODO: Create non mocked TokenIdentifiers
-                    var token = new TokenIdentifier {
-                        Consts = identifiers
-                    };
-                    tokens.Add(token);
+                    TokenIdentifier token;
+                    int? nextChar = 0;
+                    while (nextChar.HasValue) {
+                        (token, nextChar) = Processor.ReadToken(tokenSubset);
+                        token.Consts = identifiers;
+                        tokens.Add(token);
+                    }
                 });
             return tokens;
         }
-
-
     }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ewlx+7Bk+/Mu99rbtQuwM13xcauxajP8+sHslsFtmwPzzoqNWrpj3jVYQWccmA3KftL37FS5AcUbK4f8WYRKww==",
+  "dgSpecHash": "Gy/L8K6GVHn4d8DylfQEe0FPopVHconm74Q8XkdPzI3vVTTkFW4yHWPDPiva8krWG7+e0eA5QqK4lK70+1gUaw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\mathe\\.nuget\\packages\\stateless\\5.11.0\\stateless.5.11.0.nupkg.sha512"
   ],
   "logs": []
 }
