@@ -16,6 +16,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "SimpleScriptLanguageCompiler.Common": "1.0.0",
           "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
         },
         "compile": {

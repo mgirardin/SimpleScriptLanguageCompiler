@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f4ZaX6Hr+chnGbo1aS+ddECkF00K7hxhQ+avfS0JPS8luSSATZc2I2G8gkItWteNmY+TmSqd59sMZ088isbDAA==",
+  "dgSpecHash": "ewlx+7Bk+/Mu99rbtQuwM13xcauxajP8+sHslsFtmwPzzoqNWrpj3jVYQWccmA3KftL37FS5AcUbK4f8WYRKww==",
   "success": true,
   "projectFilePath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj",
   "expectedPackageFiles": [

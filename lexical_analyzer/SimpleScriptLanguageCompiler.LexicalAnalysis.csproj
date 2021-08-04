@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\common\SimpleScriptLanguageCompiler.Common.csproj" />
     <ProjectReference Include="..\tokens\SimpleScriptLanguageCompiler.Tokens.csproj" />
   </ItemGroup>
 

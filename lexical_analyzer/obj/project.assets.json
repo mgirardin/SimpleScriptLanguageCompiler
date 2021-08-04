@@ -26,6 +26,16 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "SimpleScriptLanguageCompiler.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.Common.dll": {}
+        }
+      },
       "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -182,6 +192,11 @@
         "netstandard.library.nuspec"
       ]
     },
+    "SimpleScriptLanguageCompiler.Common/1.0.0": {
+      "type": "project",
+      "path": "../common/SimpleScriptLanguageCompiler.Common.csproj",
+      "msbuildProject": "../common/SimpleScriptLanguageCompiler.Common.csproj"
+    },
     "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
       "type": "project",
       "path": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj",
@@ -191,6 +206,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "SimpleScriptLanguageCompiler.Common >= 1.0.0",
       "SimpleScriptLanguageCompiler.Tokens >= 1.0.0"
     ]
   },
@@ -226,6 +242,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\common\\SimpleScriptLanguageCompiler.Common.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\common\\SimpleScriptLanguageCompiler.Common.csproj"
+            },
             "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj": {
               "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj"
             }

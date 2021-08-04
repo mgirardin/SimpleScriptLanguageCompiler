@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using SimpleScriptLanguageCompiler.Common;
 using SimpleScriptLanguageCompiler.Tokens;
 
 namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
@@ -8,18 +8,18 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
 
         public static IReadOnlyCollection<TokenIdentifier> Run(string content) {
             var identifiers = new List<(int, char, string)>();
-            return content.Split(Separators)
-                .Select(tokenSubset => {
-                    var tokens = new List<TokenIdentifier>();
+            var tokens = new List<TokenIdentifier>();
+            content.Split(Separators)
+                .ForEach(tokenSubset => {
                     // TODO: Create non mocked TokenIdentifiers
                     var token = new TokenIdentifier {
                         Consts = identifiers
                     };
                     tokens.Add(token);
-                    return tokens;
-                })
-                .SelectMany(x => x)
-                .ToList();
+                });
+            return tokens;
         }
+
+
     }
 }
