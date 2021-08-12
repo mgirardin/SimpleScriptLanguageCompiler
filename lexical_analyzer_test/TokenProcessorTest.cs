@@ -53,5 +53,41 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
             var check = (tokens.Count != 1 || tokens.First().Token == token);
             Assert.IsTrue(check);
         }
+
+        [Test]
+        [TestCase(TokenEnum.COMMA, ",")]
+        [TestCase(TokenEnum.DOT, ".")]
+        [TestCase(TokenEnum.COLON, ":")]
+        [TestCase(TokenEnum.SEMI_COLON, ";")]
+        [TestCase(TokenEnum.LEFT_SQUARE, "[")]
+        [TestCase(TokenEnum.RIGHT_SQUARE, "]")]
+        [TestCase(TokenEnum.LEFT_BRACES, "{")]
+        [TestCase(TokenEnum.RIGHT_BRACES, "}")]
+        [TestCase(TokenEnum.TIMES, "*")]
+        [TestCase(TokenEnum.LEFT_PARENTHESIS, "(")]
+        [TestCase(TokenEnum.RIGHT_PARENTHESIS, ")")]
+        [TestCase(TokenEnum.DIVIDE, "/")]
+        public void ShouldIdentifyRegularTokens(TokenEnum token, string content) {
+            var tokens = Scanner.Run(content);
+
+            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(token, tokens.First().Token);
+        }
+
+        [Test]
+        [TestCase(TokenEnum.CHARACTER, "'a'")]
+        [TestCase(TokenEnum.CHARACTER, "'A'")]
+        [TestCase(TokenEnum.CHARACTER, "'z'")]
+        [TestCase(TokenEnum.CHARACTER, "'Z'")]
+        [TestCase(TokenEnum.CHARACTER, "'0'")]
+        [TestCase(TokenEnum.CHARACTER, "'9'")]
+        [TestCase(TokenEnum.CHARACTER, "'*'")]
+        [TestCase(TokenEnum.CHARACTER, "'&'")]
+        public void ShouldIdentifyCharacters(TokenEnum token, string content) {
+            var tokens = Scanner.Run(content);
+
+            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(token, tokens.First().Token);
+        }
     }
 }

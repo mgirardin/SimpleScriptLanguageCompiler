@@ -34,6 +34,19 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.Identifier => KeywordFinder.Find(buffer),
                 TokenState.Numeral => TokenEnum.NUMERAL,
                 TokenState.Decimal => TokenEnum.NUMERAL,
+                TokenState.ClosedCharacter => TokenEnum.CHARACTER,
+                TokenState.Comma => TokenEnum.COMMA,
+                TokenState.Dot => TokenEnum.DOT,
+                TokenState.Colon => TokenEnum.COLON,
+                TokenState.SemiColon => TokenEnum.SEMI_COLON,
+                TokenState.LeftSquare => TokenEnum.LEFT_SQUARE,
+                TokenState.RightSquare => TokenEnum.RIGHT_SQUARE,
+                TokenState.LeftBraces => TokenEnum.LEFT_BRACES,
+                TokenState.RightBraces => TokenEnum.RIGHT_BRACES,
+                TokenState.LeftParenthesis => TokenEnum.LEFT_PARENTHESIS,
+                TokenState.RightParenthesis => TokenEnum.RIGHT_PARENTHESIS,
+                TokenState.Times => TokenEnum.TIMES,
+                TokenState.Divide => TokenEnum.DIVIDE,
                 _ => TokenEnum.UNKNOWN
             };
             var token = new TokenIdentifier {
@@ -48,27 +61,73 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             State = TokenState.InitialState;
 
         private void ConfigureStateMachine() {
-            // Keywords
+            // Helpers
+            var chars = Enumerable.Range('a', 26)
+                .Concat(Enumerable.Range('A', 26))
+                .Select(x => (char)x)
+                .Concat(new char[] { '_' });
+            var ascii = Enumerable.Range('\x1', 127)
+                .Select(x => (char)x);
+            var digits = Enumerable.Range('0', 10)
+                .Select(x => (char)x);
+
+            // Keywords and identifiers
             StateMachine.Configure(TokenState.InitialState)
-                .PermitForAll(Enumerable.Range('a', 26).Select(x => (char)x).Concat(new char[] { '_' }), TokenState.Identifier);
+                .PermitForAll(chars, TokenState.Identifier);
             StateMachine.Configure(TokenState.Identifier)
-                .IgnoreForAll(Enumerable.Range('a', 26).Select(x => (char)x).Concat(new char[] { '_' }));
+                .IgnoreForAll(chars);
+
+            // String
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('\"', TokenState.String);
+            StateMachine.Configure(TokenState.String)
+                .IgnoreForAll(ascii.Where(c => c != '\"'));
+            StateMachine.Configure(TokenState.String)
+                .Permit('\"', TokenState.FinishedString);
+
+            // Character
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('\'', TokenState.Charater);
+            StateMachine.Configure(TokenState.Charater)
+                .PermitForAll(ascii.Where(c => c != '\''), TokenState.FilledCharater);
+            StateMachine.Configure(TokenState.FilledCharater)
+                .Permit('\'', TokenState.ClosedCharacter);
 
             // Numerals
             StateMachine.Configure(TokenState.InitialState)
-                .PermitForAll(Enumerable.Range('0', 10).Select(x => (char)x), TokenState.Numeral);
+                .PermitForAll(digits, TokenState.Numeral);
             StateMachine.Configure(TokenState.Numeral)
-                .IgnoreForAll(Enumerable.Range('0', 10).Select(x => (char)x));
+                .IgnoreForAll(digits);
             StateMachine.Configure(TokenState.Numeral)
                 .Permit('.', TokenState.Decimal);
             StateMachine.Configure(TokenState.Decimal)
-                .IgnoreForAll(Enumerable.Range('0', 10).Select(x => (char)x));
+                .IgnoreForAll(digits);
 
-            // Comma/dot/...
+            // Comma/Dot/...
             StateMachine.Configure(TokenState.InitialState)
                 .Permit(',', TokenState.Comma);
             StateMachine.Configure(TokenState.InitialState)
                 .Permit('.', TokenState.Dot);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit(':', TokenState.Colon);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit(';', TokenState.SemiColon);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('[', TokenState.LeftSquare);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit(']', TokenState.RightSquare);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('{', TokenState.LeftBraces);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('}', TokenState.RightBraces);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('(', TokenState.LeftParenthesis);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit(')', TokenState.RightParenthesis);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('*', TokenState.Times);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('/', TokenState.Divide);
         }
     }
 
@@ -77,8 +136,23 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
         Identifier,
         Numeral,
         Decimal,
+        Charater,
+        FilledCharater,
+        ClosedCharacter,
+        String,
+        FinishedString,
         Comma,
-        Dot
+        Dot,
+        Colon,
+        SemiColon,
+        LeftSquare,
+        RightSquare,
+        LeftBraces,
+        RightBraces,
+        LeftParenthesis,
+        RightParenthesis,
+        Times,
+        Divide
     }
 
     // TODO: Move to common
