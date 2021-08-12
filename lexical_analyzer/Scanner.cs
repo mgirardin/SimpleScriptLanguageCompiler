@@ -15,7 +15,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                     TokenIdentifier token;
                     int? nextChar = 0;
                     while (nextChar.HasValue) {
-                        (token, nextChar) = Processor.ReadToken(tokenSubset);
+                        (token, nextChar) = Processor.ReadToken(tokenSubset, nextChar.Value);
                         token.Consts = identifiers;
                         tokens.Add(token);
                     }

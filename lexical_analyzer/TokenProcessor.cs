@@ -15,21 +15,25 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             ConfigureStateMachine();
         }
 
-        public (TokenIdentifier token, int? nextChar) ReadToken(string content, int initialChar = 0) {
-            if (content.Length < initialChar) throw new Exception($"{nameof(ReadToken)} should receive at least one readable char");
+        public (TokenIdentifier, int?) ReadToken(string content,
+            int initialChar = 0) {
+            if (content.Length < initialChar)
+                throw new Exception($"{nameof(ReadToken)} should receive at least one readable char");
 
             var buffer = "";
             var lastCharRead = initialChar;
             for (; lastCharRead <= content.Length; lastCharRead++) {
                 try {
                     StateMachine.Fire(content[lastCharRead]);
-                } catch (Exception e) {
+                } catch {
                     break;
                 }
                 buffer = $"{buffer}{content[lastCharRead]}";
             }
             var tokenType = StateMachine.State switch {
                 TokenState.Identifier => KeywordFinder.Find(buffer),
+                TokenState.Numeral => TokenEnum.NUMERAL,
+                TokenState.Decimal => TokenEnum.NUMERAL,
                 _ => TokenEnum.UNKNOWN
             };
             var token = new TokenIdentifier {
@@ -44,17 +48,37 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             State = TokenState.InitialState;
 
         private void ConfigureStateMachine() {
+            // Keywords
             StateMachine.Configure(TokenState.InitialState)
-                .PermitForAll(Enumerable.Range('a', 26).Select(x => (char)x), TokenState.Identifier);
-
+                .PermitForAll(Enumerable.Range('a', 26).Select(x => (char)x).Concat(new char[] { '_' }), TokenState.Identifier);
             StateMachine.Configure(TokenState.Identifier)
-                .IgnoreForAll(Enumerable.Range('a', 26).Select(x => (char)x));
+                .IgnoreForAll(Enumerable.Range('a', 26).Select(x => (char)x).Concat(new char[] { '_' }));
+
+            // Numerals
+            StateMachine.Configure(TokenState.InitialState)
+                .PermitForAll(Enumerable.Range('0', 10).Select(x => (char)x), TokenState.Numeral);
+            StateMachine.Configure(TokenState.Numeral)
+                .IgnoreForAll(Enumerable.Range('0', 10).Select(x => (char)x));
+            StateMachine.Configure(TokenState.Numeral)
+                .Permit('.', TokenState.Decimal);
+            StateMachine.Configure(TokenState.Decimal)
+                .IgnoreForAll(Enumerable.Range('0', 10).Select(x => (char)x));
+
+            // Comma/dot/...
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit(',', TokenState.Comma);
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('.', TokenState.Dot);
         }
     }
 
     enum TokenState {
         InitialState,
-        Identifier
+        Identifier,
+        Numeral,
+        Decimal,
+        Comma,
+        Dot
     }
 
     // TODO: Move to common
