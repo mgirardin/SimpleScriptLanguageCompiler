@@ -1,8 +1,61 @@
 ﻿using System;
-using System.IO;
+using System.Linq;
 using SimpleScriptLanguageCompiler.Common;
 using SimpleScriptLanguageCompiler.LexicalAnalysis;
 
-var fileContent = File.ReadAllText(args[0]);
+//var fileContent = File.ReadAllText(args[0]);
+var fileContent = @"
+function sqrt(n: integer) : integer {
+    var diff, media, aux, min, max: integer;
+    do {
+        media = max + min;
+        media = media / 2;
+        aux = media * media;
+        if (aux > n) {
+            max = media;
+        } else {
+            min = media;
+        }
+        diff = max - min;
+    } while (diff > 1);
+
+    return media;
+}
+
+function mmc(a: integer, b: integer): integer {
+    var aa,bb : integer;
+
+    aa=0;
+    bb=0;
+    while(aa != bb){
+        if (aa < bb){
+            aa = aa+a;
+        }else{
+            bb = bb+b;
+        }
+    }
+
+    return aa;
+}
+
+function primo(n: integer): boolean {
+    var divisor: integer;
+    divisor = 2;
+    do {
+        if(mmc(n,divisor) == n){
+            return true;
+        } else {
+            divisor = divisor + 1;
+        }
+    } while(divisor < sqrt(n));
+    return false;
+}";
+
 Scanner.Run(fileContent)
-    .ForEach(Console.WriteLine);
+    .Select(token => token.Token)
+    .ForEach(token => {
+        Console.WriteLine(token);
+    });
+
+System.IO.File.WriteAllLines("tokens.txt",
+    Scanner.Run(fileContent).Select(token => token.Token.ToString()));

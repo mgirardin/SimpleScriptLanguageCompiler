@@ -59,6 +59,8 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.PlusPlus => TokenEnum.PLUS_PLUS,
                 TokenState.Minus => TokenEnum.MINUS,
                 TokenState.MinusMinus => TokenEnum.MINUS_MINUS,
+                TokenState.Not => TokenEnum.NOT,
+                TokenState.NotEqual => TokenEnum.NOT_EQUAL,
                 _ => TokenEnum.UNKNOWN
             };
             var token = new TokenIdentifier {
@@ -145,6 +147,12 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             StateMachine.Configure(TokenState.Minus)
                 .Permit('-', TokenState.MinusMinus);
 
+            // Not
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('!', TokenState.Not);
+            StateMachine.Configure(TokenState.Not)
+                .Permit('=', TokenState.NotEqual);
+
             // Comma/Dot/...
             StateMachine.Configure(TokenState.InitialState)
                 .Permit(',', TokenState.Comma);
@@ -204,7 +212,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
         Plus,
         PlusPlus,
         Minus,
-        MinusMinus
+        MinusMinus,
+        Not,
+        NotEqual
     }
 
     // TODO: Move to common

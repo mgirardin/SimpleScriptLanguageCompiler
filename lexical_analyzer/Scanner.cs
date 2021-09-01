@@ -12,9 +12,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             TokenIdentifier token;
             int? nextChar = 0;
             while (nextChar.HasValue) {
+                if (content.Length <= nextChar) break;
                 if (Separators.Contains(content[nextChar.Value])) {
                     nextChar++;
-                    if (content.Length < nextChar) break;
                     continue;
                 }
                 (token, nextChar) = Processor.ReadToken(content, nextChar.Value);
