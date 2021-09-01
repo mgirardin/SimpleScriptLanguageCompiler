@@ -67,7 +67,20 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         [TestCase(TokenEnum.TIMES, "*")]
         [TestCase(TokenEnum.LEFT_PARENTHESIS, "(")]
         [TestCase(TokenEnum.RIGHT_PARENTHESIS, ")")]
+        [TestCase(TokenEnum.TIMES, "*")]
         [TestCase(TokenEnum.DIVIDE, "/")]
+        [TestCase(TokenEnum.NOT, "!")]
+        [TestCase(TokenEnum.NOT_EQUAL, "!=")]
+        [TestCase(TokenEnum.GREATER_THAN, ">")]
+        [TestCase(TokenEnum.GREATER_OR_EQUAL, ">=")]
+        [TestCase(TokenEnum.LESS_OR_EQUAL, "<=")]
+        [TestCase(TokenEnum.LESS_THAN, "<")]
+        [TestCase(TokenEnum.PLUS, "+")]
+        [TestCase(TokenEnum.PLUS_PLUS, "++")]
+        [TestCase(TokenEnum.MINUS, "-")]
+        [TestCase(TokenEnum.MINUS_MINUS, "--")]
+        [TestCase(TokenEnum.EQUALS, "=")]
+        [TestCase(TokenEnum.EQUAL_EQUAL, "==")]
         public void ShouldIdentifyRegularTokens(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
