@@ -24,7 +24,8 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             var lastCharRead = initialChar;
             for (; lastCharRead <= content.Length; lastCharRead++) {
                 try {
-                    StateMachine.Fire(content[lastCharRead]);
+                    var curChar = content[lastCharRead];
+                    StateMachine.Fire(curChar);
                 } catch {
                     break;
                 }
@@ -35,6 +36,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.Numeral => TokenEnum.NUMERAL,
                 TokenState.Decimal => TokenEnum.NUMERAL,
                 TokenState.ClosedCharacter => TokenEnum.CHARACTER,
+                TokenState.FinishedString => TokenEnum.STRINGVAL,
                 TokenState.Comma => TokenEnum.COMMA,
                 TokenState.Dot => TokenEnum.DOT,
                 TokenState.Colon => TokenEnum.COLON,
@@ -47,6 +49,16 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.RightParenthesis => TokenEnum.RIGHT_PARENTHESIS,
                 TokenState.Times => TokenEnum.TIMES,
                 TokenState.Divide => TokenEnum.DIVIDE,
+                TokenState.Equals => TokenEnum.EQUALS,
+                TokenState.EqualEqual => TokenEnum.EQUAL_EQUAL,
+                TokenState.Greater => TokenEnum.GREATER_THAN,
+                TokenState.GreaterOrEqual => TokenEnum.GREATER_OR_EQUAL,
+                TokenState.Less => TokenEnum.LESS_THAN,
+                TokenState.LessOrEqual => TokenEnum.LESS_OR_EQUAL,
+                TokenState.Plus => TokenEnum.PLUS,
+                TokenState.PlusPlus => TokenEnum.PLUS_PLUS,
+                TokenState.Minus => TokenEnum.MINUS,
+                TokenState.MinusMinus => TokenEnum.MINUS_MINUS,
                 _ => TokenEnum.UNKNOWN
             };
             var token = new TokenIdentifier {
@@ -103,6 +115,36 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             StateMachine.Configure(TokenState.Decimal)
                 .IgnoreForAll(digits);
 
+            // Equals
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('=', TokenState.Equals);
+            StateMachine.Configure(TokenState.Equals)
+                .Permit('=', TokenState.EqualEqual);
+
+            // Greater
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('>', TokenState.Greater);
+            StateMachine.Configure(TokenState.Greater)
+                .Permit('=', TokenState.GreaterOrEqual);
+
+            // Less
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('<', TokenState.Less);
+            StateMachine.Configure(TokenState.Less)
+                .Permit('=', TokenState.LessOrEqual);
+
+            // Plus
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('+', TokenState.Plus);
+            StateMachine.Configure(TokenState.Plus)
+                .Permit('+', TokenState.PlusPlus);
+
+            // Minus
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('-', TokenState.Minus);
+            StateMachine.Configure(TokenState.Minus)
+                .Permit('-', TokenState.MinusMinus);
+
             // Comma/Dot/...
             StateMachine.Configure(TokenState.InitialState)
                 .Permit(',', TokenState.Comma);
@@ -152,7 +194,17 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
         LeftParenthesis,
         RightParenthesis,
         Times,
-        Divide
+        Divide,
+        Equals,
+        EqualEqual,
+        Greater,
+        GreaterOrEqual,
+        Less,
+        LessOrEqual,
+        Plus,
+        PlusPlus,
+        Minus,
+        MinusMinus
     }
 
     // TODO: Move to common

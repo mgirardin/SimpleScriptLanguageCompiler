@@ -16,6 +16,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
             { "if", TokenEnum.IF },
             { "integer", TokenEnum.INTEGER },
             { "of", TokenEnum.OF },
+            { "return", TokenEnum.RETURN },
             { "string", TokenEnum.STRING },
             { "struct", TokenEnum.STRUCT },
             { "true", TokenEnum.TRUE },
