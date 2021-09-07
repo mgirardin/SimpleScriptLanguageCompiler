@@ -3,7 +3,7 @@
 namespace SimpleScriptLanguageCompiler.Tokens {
     public class TokenIdentifier {
         public TokenEnum Token { get; init; }
-        public int SecondaryToken { get; init; }
+        public int? SecondaryToken { get; init; }
         /// <summary>
         /// Values of regular tokens <seealso cref="TokenEnum"/>
         /// </summary>

@@ -9,14 +9,14 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
     public class TokenProcessor {
         private TokenState State = TokenState.InitialState;
         private StateMachine<TokenState, char> StateMachine { get; }
+        private static Dictionary<string, int> DictToSecondaryToken { get; } = new();
 
         public TokenProcessor() {
             StateMachine = new(() => State, s => State = s);
             ConfigureStateMachine();
         }
 
-        public (TokenIdentifier, int?) ReadToken(string content,
-            int initialChar = 0) {
+        public (TokenIdentifier, int?) ReadToken(string content, int initialChar = 0) {
             if (content.Length < initialChar)
                 throw new Exception($"{nameof(ReadToken)} should receive at least one readable char");
 
@@ -63,8 +63,16 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.NotEqual => TokenEnum.NOT_EQUAL,
                 _ => TokenEnum.UNKNOWN
             };
+            var substringRead = content.Substring(initialChar, lastCharRead - initialChar);
+            if(tokenType == TokenEnum.ID && !DictToSecondaryToken.ContainsKey(substringRead)) {
+                DictToSecondaryToken[substringRead] = DictToSecondaryToken.Count;
+            }
+            var secToken = tokenType == TokenEnum.ID
+                ? DictToSecondaryToken[substringRead]
+                : (int?)null;
             var token = new TokenIdentifier {
-                Token = tokenType
+                Token = tokenType,
+                SecondaryToken = secToken
             };
 
             ResetState();
