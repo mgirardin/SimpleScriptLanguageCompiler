@@ -54,6 +54,7 @@
         NUMERAL,
         STRINGVAL,
         ID,
-        UNKNOWN
+        UNKNOWN,
+        ENDFILE
     }
 }

@@ -28,8 +28,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         public void ShouldIdentifyKeyWords(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
-            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(2, tokens.Count);
             Assert.AreEqual(token, tokens.First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(1).First().Token);
         }
 
         [Test]
@@ -41,8 +42,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         public void ShouldIdentifyNumerals(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
-            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(2, tokens.Count);
             Assert.AreEqual(token, tokens.First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(1).First().Token);
         }
 
         [Test]
@@ -84,8 +86,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         public void ShouldIdentifyRegularTokens(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
-            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(2, tokens.Count);
             Assert.AreEqual(token, tokens.First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(1).First().Token);
         }
 
         [Test]
@@ -100,8 +103,9 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         public void ShouldIdentifyCharacters(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
-            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(2, tokens.Count);
             Assert.AreEqual(token, tokens.First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(1).First().Token);
         }
 
         [Test]
@@ -114,41 +118,44 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
         public void ShouldIdentifyStrings(TokenEnum token, string content) {
             var tokens = Scanner.Run(content);
 
-            Assert.AreEqual(1, tokens.Count);
+            Assert.AreEqual(2, tokens.Count);
             Assert.AreEqual(token, tokens.First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(1).First().Token);
         }
 
         [Test]
         public void ShouldIdentifyStringDeclaration() {
             var tokens = Scanner.Run("var variable: string = \"Simple String\"");
 
-            Assert.AreEqual(6, tokens.Count());
+            Assert.AreEqual(7, tokens.Count());
             Assert.AreEqual(TokenEnum.VAR, tokens.First().Token);
             Assert.AreEqual(TokenEnum.ID, tokens.Skip(1).First().Token);
             Assert.AreEqual(TokenEnum.COLON, tokens.Skip(2).First().Token);
             Assert.AreEqual(TokenEnum.STRING, tokens.Skip(3).First().Token);
             Assert.AreEqual(TokenEnum.EQUALS, tokens.Skip(4).First().Token);
             Assert.AreEqual(TokenEnum.STRINGVAL, tokens.Skip(5).First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(6).First().Token);
         }
 
         [Test]
         public void ShouldIdentifyIntegerDeclaration() {
             var tokens = Scanner.Run("var variavel: integer = 50");
 
-            Assert.AreEqual(6, tokens.Count());
+            Assert.AreEqual(7, tokens.Count());
             Assert.AreEqual(TokenEnum.VAR, tokens.First().Token);
             Assert.AreEqual(TokenEnum.ID, tokens.Skip(1).First().Token);
             Assert.AreEqual(TokenEnum.COLON, tokens.Skip(2).First().Token);
             Assert.AreEqual(TokenEnum.INTEGER, tokens.Skip(3).First().Token);
             Assert.AreEqual(TokenEnum.EQUALS, tokens.Skip(4).First().Token);
             Assert.AreEqual(TokenEnum.NUMERAL, tokens.Skip(5).First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(6).First().Token);
         }
 
         [Test]
         public void ShouldIdentifyFunction() {
             var tokens = Scanner.Run("function sqrt(n: integer) : integer { return 10 }");
 
-            Assert.AreEqual(13, tokens.Count());
+            Assert.AreEqual(14, tokens.Count());
             Assert.AreEqual(TokenEnum.FUNCTION, tokens.First().Token);
             Assert.AreEqual(TokenEnum.ID, tokens.Skip(1).First().Token);
             Assert.AreEqual(TokenEnum.LEFT_PARENTHESIS, tokens.Skip(2).First().Token);
@@ -162,6 +169,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
             Assert.AreEqual(TokenEnum.RETURN, tokens.Skip(10).First().Token);
             Assert.AreEqual(TokenEnum.NUMERAL, tokens.Skip(11).First().Token);
             Assert.AreEqual(TokenEnum.RIGHT_BRACES, tokens.Skip(12).First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(13).First().Token);
         }
 
         [Test]
@@ -184,7 +192,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
                 }"
             );
 
-            Assert.AreEqual(80, tokens.Count());
+            Assert.AreEqual(81, tokens.Count());
             // function sqrt(n: integer) : integer {
             Assert.AreEqual(TokenEnum.FUNCTION, tokens.First().Token);
             Assert.AreEqual(TokenEnum.ID, tokens.Skip(1).First().Token);
@@ -280,6 +288,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis.Test {
             Assert.AreEqual(TokenEnum.SEMI_COLON, tokens.Skip(78).First().Token);
             // }
             Assert.AreEqual(TokenEnum.RIGHT_BRACES, tokens.Skip(79).First().Token);
+            Assert.AreEqual(TokenEnum.ENDFILE, tokens.Skip(80).First().Token);
         }
     }
 }

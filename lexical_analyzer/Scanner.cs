@@ -21,6 +21,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 token.Consts = identifiers;
                 tokens.Add(token);
             }
+            tokens.Add(new TokenIdentifier { Token = TokenEnum.ENDFILE });
             return tokens;
         }
     }

@@ -36,6 +36,19 @@
           "bin/placeholder/SimpleScriptLanguageCompiler.LexicalAnalysis.dll": {}
         }
       },
+      "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.SyntacticAnalysis.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.SyntacticAnalysis.dll": {}
+        }
+      },
       "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -83,6 +96,11 @@
       "path": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalysis.csproj",
       "msbuildProject": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalysis.csproj"
     },
+    "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
+      "type": "project",
+      "path": "../SimpleScriptLanguageCompiler.SyntacticAnalysis/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
+      "msbuildProject": "../SimpleScriptLanguageCompiler.SyntacticAnalysis/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
+    },
     "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
       "type": "project",
       "path": "../tokens/SimpleScriptLanguageCompiler.Tokens.csproj",
@@ -92,7 +110,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "SimpleScriptLanguageCompiler.Common >= 1.0.0",
-      "SimpleScriptLanguageCompiler.LexicalAnalysis >= 1.0.0"
+      "SimpleScriptLanguageCompiler.LexicalAnalysis >= 1.0.0",
+      "SimpleScriptLanguageCompiler.SyntacticAnalysis >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -132,6 +151,9 @@
             },
             "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj": {
               "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj"
+            },
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
             }
           }
         }
@@ -160,7 +182,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

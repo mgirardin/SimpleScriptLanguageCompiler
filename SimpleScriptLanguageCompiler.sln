@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompile
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.Common", "common\SimpleScriptLanguageCompiler.Common.csproj", "{A52BC033-92C2-47B7-9D82-3A33E21C23AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScriptLanguageCompiler.LexicalAnalysis.Test", "lexical_analyzer_test\SimpleScriptLanguageCompiler.LexicalAnalysis.Test.csproj", "{44409A91-E4C9-4FAE-B384-FBBFB59D3E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleScriptLanguageCompiler.LexicalAnalysis.Test", "lexical_analyzer_test\SimpleScriptLanguageCompiler.LexicalAnalysis.Test.csproj", "{44409A91-E4C9-4FAE-B384-FBBFB59D3E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScriptLanguageCompiler.SyntacticAnalysis", "SimpleScriptLanguageCompiler.SyntacticAnalysis\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj", "{5446FF43-A799-46B8-B4D7-21571C613D9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{44409A91-E4C9-4FAE-B384-FBBFB59D3E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44409A91-E4C9-4FAE-B384-FBBFB59D3E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44409A91-E4C9-4FAE-B384-FBBFB59D3E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5446FF43-A799-46B8-B4D7-21571C613D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5446FF43-A799-46B8-B4D7-21571C613D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5446FF43-A799-46B8-B4D7-21571C613D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5446FF43-A799-46B8-B4D7-21571C613D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

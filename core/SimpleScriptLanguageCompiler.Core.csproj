@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\common\SimpleScriptLanguageCompiler.Common.csproj" />
     <ProjectReference Include="..\lexical_analyzer\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj" />
+    <ProjectReference Include="..\SimpleScriptLanguageCompiler.SyntacticAnalysis\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj" />
   </ItemGroup>
 
 </Project>
