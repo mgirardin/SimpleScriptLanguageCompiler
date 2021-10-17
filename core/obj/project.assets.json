@@ -98,8 +98,8 @@
     },
     "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
       "type": "project",
-      "path": "../SimpleScriptLanguageCompiler.SyntacticAnalysis/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
-      "msbuildProject": "../SimpleScriptLanguageCompiler.SyntacticAnalysis/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
+      "path": "../parser/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
+      "msbuildProject": "../parser/SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
     },
     "SimpleScriptLanguageCompiler.Tokens/1.0.0": {
       "type": "project",
@@ -152,8 +152,8 @@
             "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj": {
               "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj"
             },
-            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
-              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
+            "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
             }
           }
         }

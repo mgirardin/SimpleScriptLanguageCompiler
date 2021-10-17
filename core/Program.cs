@@ -6,4 +6,3 @@ var fileContent = File.ReadAllText(args[0]);
 
 Scanner.Run(fileContent)
     .Parse();
-System.Console.WriteLine("PARSED");

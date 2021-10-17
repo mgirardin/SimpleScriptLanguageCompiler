@@ -51,6 +51,8 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 TokenState.Divide => TokenEnum.DIVIDE,
                 TokenState.Equals => TokenEnum.EQUALS,
                 TokenState.EqualEqual => TokenEnum.EQUAL_EQUAL,
+                TokenState.And => TokenEnum.AND,
+                TokenState.Or => TokenEnum.OR,
                 TokenState.Greater => TokenEnum.GREATER_THAN,
                 TokenState.GreaterOrEqual => TokenEnum.GREATER_OR_EQUAL,
                 TokenState.Less => TokenEnum.LESS_THAN,
@@ -64,7 +66,7 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 _ => TokenEnum.UNKNOWN
             };
             var substringRead = content.Substring(initialChar, lastCharRead - initialChar);
-            if(tokenType == TokenEnum.ID && !DictToSecondaryToken.ContainsKey(substringRead)) {
+            if (tokenType == TokenEnum.ID && !DictToSecondaryToken.ContainsKey(substringRead)) {
                 DictToSecondaryToken[substringRead] = DictToSecondaryToken.Count;
             }
             var secToken = tokenType == TokenEnum.ID
@@ -130,6 +132,18 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
                 .Permit('=', TokenState.Equals);
             StateMachine.Configure(TokenState.Equals)
                 .Permit('=', TokenState.EqualEqual);
+
+            // And
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('&', TokenState.SingleAnd);
+            StateMachine.Configure(TokenState.SingleAnd)
+                .Permit('&', TokenState.And);
+
+            // Or
+            StateMachine.Configure(TokenState.InitialState)
+                .Permit('|', TokenState.SingleOr);
+            StateMachine.Configure(TokenState.SingleOr)
+                .Permit('|', TokenState.Or);
 
             // Greater
             StateMachine.Configure(TokenState.InitialState)
@@ -213,6 +227,10 @@ namespace SimpleScriptLanguageCompiler.LexicalAnalysis {
         Divide,
         Equals,
         EqualEqual,
+        SingleAnd,
+        And,
+        SingleOr,
+        Or,
         Greater,
         GreaterOrEqual,
         Less,

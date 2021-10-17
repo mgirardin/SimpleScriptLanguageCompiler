@@ -99,8 +99,8 @@
               "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj": {
                 "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\lexical_analyzer\\SimpleScriptLanguageCompiler.LexicalAnalysis.csproj"
               },
-              "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
+              "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
+                "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj"
               }
             }
           }
@@ -205,14 +205,14 @@
         }
       }
     },
-    "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
+    "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
         "projectName": "SimpleScriptLanguageCompiler.SyntacticAnalysis",
-        "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
+        "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\SimpleScriptLanguageCompiler.SyntacticAnalysis.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SyntacticAnalysis\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\parser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
