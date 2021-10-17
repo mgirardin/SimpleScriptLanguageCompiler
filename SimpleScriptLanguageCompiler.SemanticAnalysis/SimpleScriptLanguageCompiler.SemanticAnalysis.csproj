@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+      <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleScriptLanguageCompiler.SemanticAnalysis\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj" />
     <ProjectReference Include="..\tokens\SimpleScriptLanguageCompiler.Tokens.csproj" />
   </ItemGroup>
 

@@ -36,10 +36,24 @@
           "bin/placeholder/SimpleScriptLanguageCompiler.LexicalAnalysis.dll": {}
         }
       },
+      "SimpleScriptLanguageCompiler.SemanticAnalysis/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.SemanticAnalysis.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleScriptLanguageCompiler.SemanticAnalysis.dll": {}
+        }
+      },
       "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "SimpleScriptLanguageCompiler.SemanticAnalysis": "1.0.0",
           "SimpleScriptLanguageCompiler.Tokens": "1.0.0"
         },
         "compile": {
@@ -95,6 +109,11 @@
       "type": "project",
       "path": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalysis.csproj",
       "msbuildProject": "../lexical_analyzer/SimpleScriptLanguageCompiler.LexicalAnalysis.csproj"
+    },
+    "SimpleScriptLanguageCompiler.SemanticAnalysis/1.0.0": {
+      "type": "project",
+      "path": "../SimpleScriptLanguageCompiler.SemanticAnalysis/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
+      "msbuildProject": "../SimpleScriptLanguageCompiler.SemanticAnalysis/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj"
     },
     "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
       "type": "project",
