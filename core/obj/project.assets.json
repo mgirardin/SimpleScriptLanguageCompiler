@@ -112,8 +112,8 @@
     },
     "SimpleScriptLanguageCompiler.SemanticAnalysis/1.0.0": {
       "type": "project",
-      "path": "../SimpleScriptLanguageCompiler.SemanticAnalysis/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
-      "msbuildProject": "../SimpleScriptLanguageCompiler.SemanticAnalysis/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj"
+      "path": "../semantic/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
+      "msbuildProject": "../semantic/SimpleScriptLanguageCompiler.SemanticAnalysis.csproj"
     },
     "SimpleScriptLanguageCompiler.SyntacticAnalysis/1.0.0": {
       "type": "project",

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleScriptLanguageCompiler.SemanticAnalysis\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj" />
+    <ProjectReference Include="..\semantic\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj" />
     <ProjectReference Include="..\tokens\SimpleScriptLanguageCompiler.Tokens.csproj" />
   </ItemGroup>
 

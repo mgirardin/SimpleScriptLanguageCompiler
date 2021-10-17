@@ -233,8 +233,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj"
+              "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj": {
+                "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj"
               },
               "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj": {
                 "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\tokens\\SimpleScriptLanguageCompiler.Tokens.csproj"
@@ -273,14 +273,14 @@
         }
       }
     },
-    "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj": {
+    "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
         "projectName": "SimpleScriptLanguageCompiler.SemanticAnalysis",
-        "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
+        "projectPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\SimpleScriptLanguageCompiler.SemanticAnalysis.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\SimpleScriptLanguageCompiler.SemanticAnalysis\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\Projects\\SimpleScriptLanguageCompiler\\semantic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
